@@ -20,8 +20,48 @@ body, a:link, a:visited, a:active{
 .title{
   background-color: #777;
 }
-.dancer{
+/*.dancer{
+  border:10px solid green;
+  border-radius:10px;
+  position:absolute;
+}*/
+.blinkyClass{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
 }
+.dancer3{
+  border:10px solid red;
+  border-radius:10px;
+  position:absolute;
+}
+
+
+.dancer {
+    width: 100px;
+    height: 100px;
+    background: red;
+    position :absolute;
+    -webkit-animation: mymove 5s infinite; /* Safari 4.0 - 8.0 */
+    animation: mymove 5s infinite;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+    0%   {top: 0px;}
+    25%  {top: 200px;}
+    75%  {top: 50px}
+    100% {top: 100px;}
+}
+
+/* Standard syntax */
+@keyframes mymove {
+    0%   {top: 0px;}
+    25%  {top: 200px;}
+    75%  {top: 50px}
+    100% {top: 100px;}
+}
+
+
+
+
