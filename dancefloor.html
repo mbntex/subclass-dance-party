@@ -5,15 +5,75 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script src="lib/jquery.js"></script>
     <script src="src/dancer.js"></script>
+    <script src="src/rainDancer.js"></script>
     <script src="src/blinkyDancer.js"></script>
-    <script src="src/bouncyDancer.js"></script>
+    <script src="src/lightDancer.js"></script>
+    <script src="src/personDancer.js"></script>
+    <script src="src/crimeDancer.js"></script>
+    <script src="src/balloonDancer.js"></script>
   </head>
   <body>
     <div class="topbar">
       <span class="title">object dance party</span>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeBlinkyDancer">add a blinky dancer</a>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeBouncyDancer">add a bouncy dancer</a>    
+      <a href="#" class="addDancerButton btn" data-dancer-maker-function-name="makeSmog">add smog</a>
+      <a href="#" class="addDancerButton btn" data-dancer-maker-function-name="makePersonDancer">add a person dancer</a>
+      <a href="#" class="addDancerButton btn" data-dancer-maker-function-name="makeBouncyDancer">add raindrop dancers</a>
+      <a href="#" class="addDancerButton btn" data-dancer-maker-function-name="makeLightDancer">add lights</a>
+      <a href="#" class="addDancerButton btn" data-dancer-maker-function-name="makeCrimeDancer">add criminal dancer</a>
+      <a href="#" class="addDancerButton btn" data-dancer-maker-function-name="makeBalloonDancer">add balloon</a>
+      <a href="#" class="btn2" id="lineButton">LINE UP ON TOP</a>
+      <a href="#" class="btn2" id="fogButton">FOG</a>
     </div>
-    <script src="src/init.js"></script>
+    <audio id= "audio"
+      src="http://ipoderia.com/tracks/mp3/realbook_a-z/Realbook-F/Freedom%20Jazz%20Dance%20-%20Miles%20Davis.mp3"
+      controls>
+      Your browser does not support the <code>audio</code> element.
+    </audio>
+    <img id="wagon" src="Wagon.png"/>
+    <img id="backgroundMovement" src="BackgroundMovement.png"/>
+      <div id= "fog">
+
+      <script src="src/init.js"></script>
+      <script>
+        $('#lineButton').on('click', function(event){
+          //console.log('clicked!!!');
+          //console.log(window.dancers);
+        });
+      </script>
+
+      <script>
+        var fogged = false;
+        $(document).ready(function(){$('#fog').hide();});
+        $('#lineButton').on('click', function(event){
+          for (var i = 0; i < window.dancers.length; i ++) {
+            console.log(window.dancers[i]);
+            window.dancers[i].line();
+            //window.dancers[i].left = 0;
+            var roll = Math.floor(Math.random() * 800);
+            window.dancers[i].setPosition(0, roll);
+          }
+        });
+        $('#fogButton').on('click', function(event){
+          if (fogged === false) {
+            $('#fog').show();
+            fogged = true;
+          } else {
+            $('#fog').hide();
+            fogged = false;
+          }
+          console.log('working');
+        });
+      </script>
+      
+      <!-- <script>
+        $(document).ready(function() {
+          $('body').click(function(e) {
+            var offset = $(this).offset();
+            alert(e.pageX - offset.left);
+            alert(e.pageY - offset.top);
+          });
+        });
+      </script> -->
+      </div>
   </body>
 </html>

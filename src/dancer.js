@@ -35,25 +35,32 @@
 
 var makeDancer = function(top, left, timeBetweenSteps, classBeingMade = 'dancer') {
   this.timeBetweenSteps = timeBetweenSteps;
-
-  // this.defaultClass = 'dancer';
-  // this.$node = $('<span class="' + this.defaultClass + '"></span>');
-  console.log('THIS IN MAKEDANCER SUPERCLASS FUNCTION = ', this);
-  //this.classBeingMade = classBeingMade;
   this.$node = $('<span class='+ classBeingMade +'></span>');
-
+  $(this.$node).on('click', function(){console.log('wrapper')});
   this.step();
   this.setPosition(top, left);
+  this.top = top;
+  this.left = left;
+  this.classBeingMade = classBeingMade;
 };
 
+  makeDancer.prototype.line = function() {
+    //USED SETPOSITION INSTEAD
+    console.log('lining up NOW, THIS = ', this);
+    console.log('lining up NOW, THIS LEFT= ', this.left);
+    //console.log(window.dancer);
+    //this.top = 500;
+    // var styleSettings = {
+    //   top: top - 50,
+    //   left: left
+    // };
+    // this.$node.css(styleSettings);
+  };
+
   makeDancer.prototype.step = function() {
-    // the basic dancer doesn't do anything interesting at all on each step,
-    // it just schedules the next step
     var context = this;
     setTimeout(function() {context.step()}, this.timeBetweenSteps);
-    //console.log('makeDancer step has run!');
   };
-  //dancer.step();
 
   makeDancer.prototype.setPosition = function(top, left) {
     var styleSettings = {
@@ -63,10 +70,9 @@ var makeDancer = function(top, left, timeBetweenSteps, classBeingMade = 'dancer'
     this.$node.css(styleSettings);
   };
 
-  // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
-  // this one sets the position to some random default point within the body
-  //dancer.setPosition(top, left);
 
-  //return dancer;
-//};
+
+
+
+
 

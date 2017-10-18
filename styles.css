@@ -3,9 +3,11 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background: url("https://static1.squarespace.com/static/54580d81e4b0d05efd3710ba/t/59352d683a04116a15b1c956/1496657267527/") green no-repeat center center fixed;
+  background-size: cover;
   font-size: 18px;
 }
+
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
@@ -13,6 +15,90 @@ body, a:link, a:visited, a:active{
   padding:5px 12px;
   float:right;
 }
+
+#wagon {
+  position: absolute;
+  top: 580px;
+  left: 650px;
+  height:150px;
+  width:100px;
+  animation: shakeTwo 5s infinite;
+}
+
+#backgroundMovement {
+  position: absolute;
+  top: 615px;
+  left: 250px;
+  height:180px;
+  width:950px;
+  opacity: 0.9;
+  animation: shakeTwo 8s infinite;
+}
+
+.btn {
+  background: #c79414;
+  background-image: -webkit-linear-gradient(top, #c79414, #b8572b);
+  background-image: -moz-linear-gradient(top, #c79414, #b8572b);
+  background-image: -ms-linear-gradient(top, #c79414, #b8572b);
+  background-image: -o-linear-gradient(top, #c79414, #b8572b);
+  background-image: linear-gradient(to bottom, #c79414, #b8572b);
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 17px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #17393d;
+  background-image: -webkit-linear-gradient(top, #17393d, #d9aa34);
+  background-image: -moz-linear-gradient(top, #17393d, #d9aa34);
+  background-image: -ms-linear-gradient(top, #17393d, #d9aa34);
+  background-image: -o-linear-gradient(top, #17393d, #d9aa34);
+  background-image: linear-gradient(to bottom, #17393d, #d9aa34);
+  text-decoration: none;
+}
+
+.btn2 {
+  background: #1a1712;
+  background-image: -webkit-linear-gradient(top, #1a1712, #d98b2b);
+  background-image: -moz-linear-gradient(top, #1a1712, #d98b2b);
+  background-image: -ms-linear-gradient(top, #1a1712, #d98b2b);
+  background-image: -o-linear-gradient(top, #1a1712, #d98b2b);
+  background-image: linear-gradient(to bottom, #1a1712, #d98b2b);
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 25px;
+  padding: 15px 20px 1px 20px;
+  text-decoration: none;
+}
+
+.btn2:hover {
+  background: #17393d;
+  background-image: -webkit-linear-gradient(top, #17393d, #d9aa34);
+  background-image: -moz-linear-gradient(top, #17393d, #d9aa34);
+  background-image: -ms-linear-gradient(top, #17393d, #d9aa34);
+  background-image: -o-linear-gradient(top, #17393d, #d9aa34);
+  background-image: linear-gradient(to bottom, #17393d, #d9aa34);
+  text-decoration: none;
+}
+
+.voided {
+  opacity: 0;
+}
+
+#audio {
+  position: relative;
+  top: 20px;
+}
+
+#fog {
+  content:url("https://opengameart.org/sites/default/files/fog01.png");
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+}​
+
 .topbar{
   height:32px;
   background-color: #555;
@@ -25,11 +111,49 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }*/
-.blinkyClass{
-  border:10px solid red;
-  border-radius:10px;
+.smogClass{
+  content: url("https://orig00.deviantart.net/1dff/f/2014/149/f/a/cloud_01_png_by_altair_e_stock-d7k6efj.png");
+  width: 300px;
+  height:200px;
+  opacity: 0.45;
   position:absolute;
 }
+
+.crimeClass{
+  content:url("http://jsaddcox.com/wp-content/uploads/2015/10/ACS_Jacob_Frye.png");
+  width: 80px;
+  height: 170px;
+  position:absolute;
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
+
+.lightClass{
+  border:10px solid yellow;
+  border-radius:10px;
+  opacity: 0.5;
+  position:absolute;
+}
+
+.personClass{
+  content:url("http://www.clipartqueen.com/image-files/203x349xtwo-victorian-ladies-2.png.pagespeed.ic.lgo-b9FE6Y.png");
+  width: 80px;
+  height: 170px;
+  position:absolute;
+}
+
+.balloonClass{
+  content:url("https://picpng.com/uploads/small/Vintage_Balloon_Retro_Classic_54296.Png");
+  width: 500px;
+  height: 350px;
+  animation: shake 5s infinite;
+  /*border:10px solid yellow;
+  border-radius:10px;*/
+  position:absolute;
+}
+
 .dancer3{
   border:10px solid red;
   border-radius:10px;
@@ -38,9 +162,10 @@ body, a:link, a:visited, a:active{
 
 
 .dancer {
-    width: 100px;
-    height: 100px;
-    background: red;
+    width: 10px;
+    height: 15px;
+    background: aqua;
+    opacity: 0.65;
     position :absolute;
     -webkit-animation: mymove 5s infinite; /* Safari 4.0 - 8.0 */
     animation: mymove 5s infinite;
@@ -49,18 +174,96 @@ body, a:link, a:visited, a:active{
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes mymove {
     0%   {top: 0px;}
-    25%  {top: 200px;}
-    75%  {top: 50px}
-    100% {top: 100px;}
+    25%  {top: 1000px;}
+    75%  {top: 200px}
+    100% {top: 500px;}
 }
 
 /* Standard syntax */
 @keyframes mymove {
     0%   {top: 0px;}
-    25%  {top: 200px;}
-    75%  {top: 50px}
-    100% {top: 100px;}
+    25%  {top: 1000px;}
+    75%  {top: 200px}
+    100% {top: 500px;}
 }
+
+
+.personClass {
+    content:url("http://www.clipartqueen.com/image-files/203x349xtwo-victorian-ladies-2.png.pagespeed.ic.lgo-b9FE6Y.png");
+  width: 80px;
+  height: 170px;
+  /*border:10px solid yellow;
+  border-radius:10px;*/
+  position:absolute;
+    
+    -webkit-animation: mymoveAlt 5s infinite; /* Safari 4.0 - 8.0 */
+    animation: mymoveAlt 5s infinite;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymoveAlt {
+    0%   {left: 0px;}
+    25%  {left: 1000px;}
+    75%  {left: 400px}
+    100% {left: 200px;}
+}
+
+/* Standard syntax */
+@keyframes mymoveAlt {
+    0%   {left: 0px;}
+    25%  {left: 1000px;}
+    75%  {left: 400px}
+    100% {left: 200px;}
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+
+@keyframes shake {
+  from, to {
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+.shake {
+  animation-name: shake;
+}
+
+@keyframes shakeTwo {
+  from, to {
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    transform: translate3d(-3px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    transform: translate3d(3px, 0, 0);
+  }
+}
+
+.shakeTwo {
+  animation-name: shakeTwo;
+}
+
+
+
 
 
 
